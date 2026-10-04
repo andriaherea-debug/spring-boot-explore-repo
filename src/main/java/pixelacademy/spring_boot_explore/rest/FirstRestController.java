@@ -1,6 +1,7 @@
 package pixelacademy.spring_boot_explore.rest;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -13,8 +14,18 @@ public class FirstRestController {
     private String teacherSubject;
 
     @Value("{teacher.experience}")
-    private String teacerExperience;
+    private String teacherExperience;
 
     @Value("{teacher.department}")
     private String teacherDepartment;
+
+
+
+    @GetMapping("/teacher")
+    public String getTeacherInfo() {
+        return "Teacher Name: "      + teacherName +
+                ", Subject: "        + teacherSubject +
+                ", Experience: "     + teacherExperience +
+                " years, Department: " + teacherDepartment;
+    }
 }
