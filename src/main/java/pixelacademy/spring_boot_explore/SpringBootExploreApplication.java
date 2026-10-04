@@ -11,3 +11,4 @@ public class SpringBootExploreApplication {
 	}
 
 }
+teacher.name=mihai
